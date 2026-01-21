@@ -41,3 +41,21 @@ def jatekos_babu(babu, jatekos):
 def kiralye(babu):
     # Király-e a bábu? (nagybetűs W vagy B)
     return babu in (FEHER_KIRALY, FEKETE_KIRALY)
+
+def tablankeszites():
+    # A tábla létrehozása és kezdőállás beállítása
+    tabla = [[EMPTY for  in range(tablameret)] for  in range(tabla_meret)]
+
+    # Fekete bábuk: sor 0..2, csak sötét mezőkön
+    for s in range(3):
+        for o in range(tabla_meret):
+            if (s + o) % 2 == 1:
+                tabla[s][o] = FEKETE
+
+    # Fehér bábuk: sor 5..7, csak sötét mezőkön
+    for s in range(5, 8):
+        for o in range(tabla_meret):
+            if (s + o) % 2 == 1:
+                tabla[s][o] = FEHER
+
+    return tabla
