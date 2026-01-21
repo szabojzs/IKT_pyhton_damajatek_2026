@@ -72,8 +72,8 @@ def tabla_rajzolas(tabla):
 def szabalyos_lepes(babu, jatekos):
     # Mely irányokba léphet/üthet az adott bábu (normál vs király, fehér vs fekete)
     # Normál bábu csak előre mehet, király mindkét irányba
-    if kiralye(babu):
-        return [(-1, -1), (-1, 1), (1, -1), (1, 1)]
+    if kiralye(babu): 
+        return [(-1, -1), (-1, 1), (1, -1), (1, 1)] # király mindkét irányba
     if jatekos == "w":
         return [(-1, -1), (-1, 1)]  # fehér felfelé
     return [(1, -1), (1, 1)]        # fekete lefelé
