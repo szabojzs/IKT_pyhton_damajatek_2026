@@ -59,3 +59,12 @@ def tablankeszites():
                 tabla[s][o] = FEHER
 
     return tabla
+
+def tablan_rajzolas(tabla):
+    # A tábla kiírása színesen
+    kepernyo_torles() # képernyő törlése
+    print("\n"+BG_SZURKE+"   "+" ".join(str(c + 1) for c in range(tabla_meret))+"   "+RESET) # oszlopok számai
+    for r in range(tabla_meret): # sorok
+        print(f"{BG_SZURKE}{r+1:2}{RESET} " + " ".join(tabla[r][c] for c in range(tabla_meret))+" "+f"{BG_SZURKE}{r+1:<2}{RESET}") # sor száma
+    print(BG_SZURKE+"   "+" ".join(str(c + 1) for c in range(tabla_meret))+"   "+RESET) # oszlopok számai
+    print() # üres sor a végén
