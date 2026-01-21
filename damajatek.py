@@ -5,3 +5,4 @@
 # - Átlósan 1-et lépsz, ütésnél 2-t ugrasz és a köztes bábu lekerül
 # - Ütés kötelező, és többszörös ütés is van (ha lehetséges folytatni kell)
 # - Király (B/W): elérve a túloldalt, visszafelé is léphet/üthet
+import os 
