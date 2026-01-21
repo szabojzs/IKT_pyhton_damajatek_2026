@@ -42,7 +42,7 @@ def kiralye(babu):
     # Király-e a bábu? (nagybetűs W vagy B)
     return babu in (FEHER_KIRALY, FEKETE_KIRALY)
 
-def tablankeszites():
+def tabla_keszites():
     # A tábla létrehozása és kezdőállás beállítása
     tabla = [[EMPTY for  in range(tablameret)] for  in range(tabla_meret)]
 
@@ -60,7 +60,7 @@ def tablankeszites():
 
     return tabla
 
-def tablan_rajzolas(tabla):
+def tabla_rajzolas(tabla):
     # A tábla kiírása színesen
     kepernyo_torles() # képernyő törlése
     print("\n"+BG_SZURKE+"   "+" ".join(str(c + 1) for c in range(tabla_meret))+"   "+RESET) # oszlopok számai
