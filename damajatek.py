@@ -5,6 +5,7 @@
 # - Átlósan 1-et lépsz, ütésnél 2-t ugrasz és a köztes bábu lekerül
 # - Ütés kötelező, és többszörös ütés is van (ha lehetséges folytatni kell)
 # - Király (B/W): elérve a túloldalt, visszafelé is léphet/üthet
+from fileinput import filename
 import os
 
 tabla_meret = 8
@@ -298,7 +299,15 @@ def game(tabla, jatekos1, jatekos2, kezdo_jatekos="b"):
         jatekos = "w" if jatekos == "b" else "b"
 
 if __name__ == "__main__":
-    uj_jatek = input("Új játék / folytatás mentettből (u/f)? ").strip().lower()
+    try:
+       with open("damajatekmentes_jatekos.txt", "r") as f:
+            ment1_jatekos = f.readline().strip()
+            ment2_jatekos = f.readline().strip()
+            szoveg= "folytatás mentettből("+ment1_jatekos+" és "+ment2_jatekos+" mentése. (u/f)? "
+    except FileNotFoundError:
+        szoveg= "nincs mentés. (u/f)? "
+  
+    uj_jatek = input("Új játék / "+szoveg).strip().lower()
     if uj_jatek == "f":
         try:
             with open("damajatekmentes.txt", "r") as f:
