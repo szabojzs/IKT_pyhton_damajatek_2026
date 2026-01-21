@@ -70,6 +70,13 @@ def tabla_rajzolas(tabla):
     print() # üres sor a végén
 
 def szabalyos_lepes(babu, jatekos):
+    # Mely irányokba léphet/üthet az adott bábu (normál vs király, fehér vs fekete)
+    # Normál bábu csak előre mehet, király mindkét irányba
+    if kiralye(babu):
+        return [(-1, -1), (-1, 1), (1, -1), (1, 1)]
+    if jatekos == "w":
+        return [(-1, -1), (-1, 1)]  # fehér felfelé
+    return [(1, -1), (1, 1)]        # fekete lefelé
 
 def lehetseges_utesek_kereses(tabla, s, o, jatekos):
 
