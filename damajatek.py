@@ -68,3 +68,13 @@ def tabla_rajzolas(tabla):
         print(f"{BG_SZURKE}{r+1:2}{RESET} " + " ".join(tabla[r][c] for c in range(tabla_meret))+" "+f"{BG_SZURKE}{r+1:<2}{RESET}") # sor száma
     print(BG_SZURKE+"   "+" ".join(str(c + 1) for c in range(tabla_meret))+"   "+RESET) # oszlopok számai
     print() # üres sor a végén
+
+def szabalyos_lepes(babu, jatekos):
+
+def lehetseges_utesek_kereses(tabla, s, o, jatekos):
+
+def jatekos_van_utes(tabla, jatekos):
+
+def normal_lepes_kereses(tabla, s, o, jatekos):
+
+def kiralya_valas(tabla, r, c): # Királlyá alakítás, ha elérte a túloldalt
