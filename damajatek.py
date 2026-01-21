@@ -19,3 +19,25 @@ FEHER =  FG_CIANK + "w" + RESET
 FEKETE =  FG_SARGA+ "b" + RESET
 FEHER_KIRALY =  FG_CIANK + "W" + RESET
 FEKETE_KIRALY =  FG_SARGA+ "B" + RESET
+
+def kepernyo_torles():
+    # Windows esetén 'cls', Linux/Mac esetén 'clear'
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+def tablan_belul(sor, oszlop):
+    # Megnézi, hogy a sor-oszlop koordináta a táblán belül van-e (0–7)
+    return 0 <= sor < tabla_meret and 0 <= oszlop < tabla_meret
+
+def ellenfel(jatekos):
+    # Visszaadja az ellenfél színét ("w" → "b", "b" → "w")
+    return "b" if jatekos.lower() == "w" else "w"
+
+def jatekos_babu(babu, jatekos):
+    # Megmondja, hogy az adott babu az aktuális játékosé-e
+    if jatekos == "w":
+        return babu in (FEHER, FEHER_KIRALY)
+    return babu in (FEKETE, FEKETE_KIRALY)
+
+def kiralye(babu):
+    # Király-e a bábu? (nagybetűs W vagy B)
+    return babu in (FEHER_KIRALY, FEKETE_KIRALY)
